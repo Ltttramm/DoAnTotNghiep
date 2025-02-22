@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NutritionHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="~/CSS/style.css" />
+
+</head>
+<body class="bg-[#F5F5DC] text-[#5C504D] min-h-screen">
+    <!-- Header: Thanh điều hướng dính trên cùng -->
+    @if (ViewData["HideHeader"] == null || !(bool)ViewData["HideHeader"])
+    {
+        <header class="fixed top-0 left-0 w-full flex justify-between items-center px-8 py-3 border-b border-gray-400 bg-[#EDE9DD] shadow-md z-50">
+            <h1 class="text-3xl font-bold text-[#C4A46B]">SmartMeal</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="/" class="hover:text-[#B8860B]">Home</a></li>
+                    <li><a href="/about" class="hover:text-[#B8860B]">About</a></li>
+                    <li><a href="/nutrition" class="hover:text-[#B8860B]">Nutrition</a></li>
+                    <li><a href="/contact" class="hover:text-[#B8860B]">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="Sign-btn flex space-x-1">
+                <button class="bg-[#C4A46B] px-5 py-2 rounded-full text-white hover:bg-[#A89F98]">Sign Up</button>
+                <button class="bg-[#C4A46B] px-5 py-2 rounded-full text-white hover:bg-[#A89F98]">Sign In</button>
+            </div>
+        </header>
+    }
+
+
+    <!-- Main Content -->
+    <main>
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-gray-700 text-sm bg-[#EDE9DD]">
+        &copy; @DateTime.Now.Year NutritionHub. All rights reserved.
+    </footer>
+</body>
+</html>
